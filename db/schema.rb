@@ -19,25 +19,23 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_26_102521) do
     t.string "house_image"
     t.string "location"
     t.string "description"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_houses_on_user_id"
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.bigint "houses_id", null: false
-    t.bigint "house_name_id", null: false
-    t.bigint "users_id", null: false
-    t.bigint "name_id", null: false
     t.string "checking_date"
     t.string "checkout_date"
     t.string "city"
     t.string "house_price"
+    t.bigint "user_id"
+    t.bigint "house_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["house_name_id"], name: "index_reservations_on_house_name_id"
-    t.index ["houses_id"], name: "index_reservations_on_houses_id"
-    t.index ["name_id"], name: "index_reservations_on_name_id"
-    t.index ["users_id"], name: "index_reservations_on_users_id"
+    t.index ["house_id"], name: "index_reservations_on_house_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,4 +44,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_26_102521) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "houses", "users"
+  add_foreign_key "reservations", "houses"
+  add_foreign_key "reservations", "users"
 end
