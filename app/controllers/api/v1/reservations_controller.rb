@@ -30,6 +30,11 @@ class Api::V1::ReservationsController < ApplicationController
     render json: { error: e.message }, status: :internal_server_error
   end
 
+  def destroy
+    @reservation = Reservation.find(params[:id]).destroy!
+    head :no_content
+  end
+
   private
 
   def reservation_params
