@@ -1,11 +1,12 @@
 class Api::V1::ReservationsController < ApplicationController
-    skip_before_action :verify_authenticity_token
-    def index
-        @reservations = Reservation.all
-        render json: @reservations
-    end
-    def create
-        @reservation = Reservation.create(
+  skip_before_action :verify_authenticity_token
+  def index
+    @reservations = Reservation.all
+    render json: @reservations
+  end
+
+  def create
+    @reservation = Reservation.create(
       checking_date: 'Today',
       checkout_date: 'Wednesday',
       city: 'Mombasa',
@@ -14,9 +15,9 @@ class Api::V1::ReservationsController < ApplicationController
       house_id: 2
     )
     if @reservation.save
-        render json: @reservation, status: :created
-       else
-        render json: @reservation.errors, :status => :unprocessable_entity
-       end
+      render json: @reservation, status: :created
+    else
+      render json: @reservation.errors, status: :unprocessable_entity
     end
+  end
 end
