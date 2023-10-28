@@ -15,7 +15,12 @@ class Api::V1::HousesController < ApplicationController
     end
   end
   def show
+      @house = House.find(params[:id])
+      render json: @house
   end
+def destroy
+  @house = House.find(params[:id])
+end
   private
 
   def house_params
