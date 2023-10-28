@@ -3,7 +3,11 @@ class Api::V1::HousesController < ApplicationController
 
   def index
     @houses = House.all
-    render json: @houses
+    if @houses
+      render json: @houses
+    else
+      render json: { error: 'No Houses Available' }, status: :not_found
+    end
   end
 
   def create
@@ -16,9 +20,16 @@ class Api::V1::HousesController < ApplicationController
   end
 
   def show
-    @house = House.find(params[:id])
-    render json: @house
+    begin
+      @house = House.find(params[:id])
+      render json: @house
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: 'No such house' }, status: :not_found
+    rescue => e
+      render json: { error: e.message }, status: :internal_server_error
+    end
   end
+  
 
   def destroy
     @house = House.find(params[:id])

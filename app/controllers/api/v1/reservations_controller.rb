@@ -3,7 +3,7 @@ class Api::V1::ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all
     if @reservations
-    render json: @reservations
+      render json: @reservations
     else
       render json: { error: 'No reservations Available' }, status: :not_found
     end
