@@ -14,13 +14,16 @@ class Api::V1::HousesController < ApplicationController
       render json: @house.errors, status: :unprocessable_entity
     end
   end
+
   def show
-      @house = House.find(params[:id])
-      render json: @house
+    @house = House.find(params[:id])
+    render json: @house
   end
-def destroy
-  @house = House.find(params[:id])
-end
+
+  def destroy
+    @house = House.find(params[:id])
+  end
+
   private
 
   def house_params

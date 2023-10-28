@@ -2,7 +2,11 @@ class Api::V1::ReservationsController < ApplicationController
   skip_before_action :verify_authenticity_token
   def index
     @reservations = Reservation.all
+    if @reservations
     render json: @reservations
+    else
+      render json: { error: 'No reservations Available' }, status: :not_found
+    end
   end
 
   def create
@@ -11,6 +15,16 @@ class Api::V1::ReservationsController < ApplicationController
       render json: @reservation, status: :created
     else
       render json: @reservation.errors, status: :unprocessable_entity
+    end
+  end
+
+  def show
+    @reservation = Reservation.find_by(id: params[:id])
+
+    if @reservation
+      render json: @reservation
+    else
+      render json: { error: 'Reservation not found' }, status: :not_found
     end
   end
 
