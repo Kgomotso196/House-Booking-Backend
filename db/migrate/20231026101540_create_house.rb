@@ -5,7 +5,7 @@ class CreateHouse < ActiveRecord::Migration[7.1]
       t.string :house_image
       t.string :location
       t.string :description
-      t.references :user, foreign_key: { to_table: :users}
+      t.references :user, foreign_key: { to_table: :users, on_delete: :cascade}
       t.timestamps
     end
   end

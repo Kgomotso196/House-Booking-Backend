@@ -19,19 +19,16 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def show
-    begin
-      @reservation = Reservation.find_by(id: params[:id])
-  
-      if @reservation
-        render json: @reservation
-      else
-        render json: { error: 'Reservation not found' }, status: :not_found
-      end
-    rescue => e
-      render json: { error: e.message }, status: :internal_server_error
+    @reservation = Reservation.find_by(id: params[:id])
+
+    if @reservation
+      render json: @reservation
+    else
+      render json: { error: 'Reservation not found' }, status: :not_found
     end
+  rescue StandardError => e
+    render json: { error: e.message }, status: :internal_server_error
   end
-  
 
   private
 

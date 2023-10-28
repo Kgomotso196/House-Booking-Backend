@@ -20,19 +20,17 @@ class Api::V1::HousesController < ApplicationController
   end
 
   def show
-    begin
-      @house = House.find(params[:id])
-      render json: @house
-    rescue ActiveRecord::RecordNotFound
-      render json: { error: 'No such house' }, status: :not_found
-    rescue => e
-      render json: { error: e.message }, status: :internal_server_error
-    end
+    @house = House.find(params[:id])
+    render json: @house
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: 'No such house' }, status: :not_found
+  rescue StandardError => e
+    render json: { error: e.message }, status: :internal_server_error
   end
-  
 
   def destroy
-    @house = House.find(params[:id])
+    @house = House.find(params[:id]).destroy!
+    head :no_content
   end
 
   private
