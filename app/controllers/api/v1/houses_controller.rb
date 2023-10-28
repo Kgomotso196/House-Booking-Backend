@@ -14,7 +14,8 @@ class Api::V1::HousesController < ApplicationController
       render json: @house.errors, status: :unprocessable_entity
     end
   end
-
+  def show
+  end
   private
 
   def house_params
