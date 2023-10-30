@@ -31,8 +31,15 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def destroy
-    @reservation = Reservation.find(params[:id]).destroy!
-    head :no_content
+    @reservation = Reservation.find(params[:id])
+    begin
+      @reservation.destroy!
+      head :no_content
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: 'Reservation not found' }, status: :not_found
+    rescue ActiveRecord::RecordNotDestroyed
+      render json: { error: 'Failed to destroy the reservation' }, status: :unprocessable_entity
+    end
   end
 
   private

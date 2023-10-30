@@ -29,8 +29,15 @@ class Api::V1::HousesController < ApplicationController
   end
 
   def destroy
-    @house = House.find(params[:id]).destroy!
-    head :no_content
+    @house = House.find(params[:id])
+    begin
+      @house.destroy!
+      head :no_content
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: 'House not found' }, status: :not_found
+    rescue ActiveRecord::RecordNotDestroyed
+      render json: { error: 'Failed to destroy the house' }, status: :unprocessable_entity
+    end
   end
 
   private
