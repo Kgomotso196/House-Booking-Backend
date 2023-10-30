@@ -7,6 +7,8 @@ gem 'rails', '~> 7.1.1'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'bcrypt', '~> 3.1.7'
+
 gem 'dotenv-rails', groups: %i[development test]
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
