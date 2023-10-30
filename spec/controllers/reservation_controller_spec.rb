@@ -69,11 +69,12 @@ RSpec.describe Api::V1::ReservationsController, type: :controller do
     end
 
     it 'returns an unprocessable entity status when an error occurs during destruction' do
-        allow(Reservation).to receive(:find).and_return(@reservation)
-        allow(@reservation).to receive(:destroy!).and_raise(ActiveRecord::RecordNotDestroyed, 'Failed to destroy the house')
-        delete :destroy, params: { id: 1 }
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(JSON.parse(response.body)).to include('error' => 'Failed to destroy the reservation')
-      end
+      allow(Reservation).to receive(:find).and_return(@reservation)
+      allow(@reservation).to receive(:destroy!).and_raise(ActiveRecord::RecordNotDestroyed,
+                                                          'Failed to destroy the house')
+      delete :destroy, params: { id: 1 }
+      expect(response).to have_http_status(:unprocessable_entity)
+      expect(JSON.parse(response.body)).to include('error' => 'Failed to destroy the reservation')
+    end
   end
 end

@@ -21,7 +21,7 @@ RSpec.describe Api::V1::HousesController, type: :controller do
         house_image: 'test.jpg',
         description: 'Description of the house',
         location: 'Some Location',
-        user_id: 1  
+        user_id: 1
       }
       allow(House).to receive(:new).with(house_attributes).and_return(@house)
       allow(@house).to receive(:save).and_return(true)
