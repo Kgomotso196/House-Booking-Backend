@@ -1,9 +1,35 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+
+users = []
+4.times do |i|
+  users << User.create(name: "User #{Faker::Name.unique.first_name} #{Faker::Name.unique.last_name}")
+end
+
+# Creating houses and assigning some a reservation class
+houses = []
+users.each do |user|
+  5.times do |i|
+    house = House.create(
+      house_name: "#{Faker::Address.unique.building_number} #{Faker::Address.unique.street_name}",
+      house_image: "https://example.com/house#{i + 1}.jpg",
+      location: Faker::Address.unique.city,
+      description: "Cozy #{Faker::Hipster.word} retreat in #{Faker::Address.unique.country}",
+      user: user
+    )
+
+    # Assign a reservation class to some houses
+    if i.even?
+      Reservation.create(
+        checking_date: Faker::Date.between(from: 1.year.ago, to: 1.year.from_now),
+        checkout_date: Faker::Date.between(from: 1.year.from_now, to: 2.years.from_now),
+        city: Faker::Address.unique.city,
+        house_price: Faker::Commerce.price(range: 50..300, as_string: true),
+        user: user,
+        house: house
+      )
+    end
+
+    houses << house
+  end
+end
+
+puts "Seed data created successfully."
