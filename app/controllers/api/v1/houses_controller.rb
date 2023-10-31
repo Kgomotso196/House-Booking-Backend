@@ -1,6 +1,4 @@
 class Api::V1::HousesController < ApplicationController
-  skip_before_action :verify_authenticity_token
-
   def index
     @houses = House.all
     if @houses
