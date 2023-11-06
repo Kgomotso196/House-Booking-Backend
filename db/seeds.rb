@@ -1,13 +1,13 @@
 
 users = []
-4.times do |i|
+1.times do |i|
   users << User.create(name: "User #{Faker::Name.unique.first_name} #{Faker::Name.unique.last_name}")
 end
 
 # Creating houses and assigning some a reservation class
 houses = []
 users.each do |user|
-  5.times do |i|
+  3.times do |i|
     house = House.create(
       house_name: "#{Faker::Address.unique.building_number} #{Faker::Address.unique.street_name}",
       house_image: "https://example.com/house#{i + 1}.jpg",
