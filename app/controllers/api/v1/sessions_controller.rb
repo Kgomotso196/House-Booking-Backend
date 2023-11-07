@@ -11,7 +11,9 @@ class Api::V1::SessionsController < ApplicationController
       render json: {
         status: :created,
         logged_in: true,
-        user:
+        user: user,
+        session: session[:user_id],
+        test: 'test'
       }
     else
       render json: { status: 401 }
@@ -25,9 +27,17 @@ class Api::V1::SessionsController < ApplicationController
         user: @current_user
       }
     else
-      render json: { logged_in: false }
+      render json: { logged_in: false, logged_out: @current_user}
     end
   end
+
+  def check_user_id
+    if session[:user_id]
+      render json: {storage: session[:user_id]}
+    else
+      render json: {storage: session[:user_id]}
+    end
+   end
 
   def logout
     reset session

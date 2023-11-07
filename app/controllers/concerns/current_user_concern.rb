@@ -11,5 +11,6 @@ module CurrentUserConcern
     return unless session[:user_id]
 
     @current_user = User.find(session[:user_id])
+    puts "Stored user_id: #{session[:user_id]}"
   end
 end

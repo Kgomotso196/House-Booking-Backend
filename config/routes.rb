@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :registrations, only: [:create]
       delete :logout, to: "sessions#logout"
       get :logged_in, to: "sessions#logged_in"
+      get :check, to: "sessions#check_user_id"
       resources :houses, only: [:index, :create, :show, :destroy]
       resources :reservations, only: [:index, :create, :show, :destroy]
     end
