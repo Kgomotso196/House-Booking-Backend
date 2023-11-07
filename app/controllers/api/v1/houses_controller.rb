@@ -1,8 +1,8 @@
 class Api::V1::HousesController < ApplicationController
   def index
-    @houses = House.all
+    @houses = House.all.includes(:reservation)
     if @houses
-      render json: @houses
+      render json: @houses, include: [:reservation]
     else
       render json: { error: 'No Houses Available' }, status: :not_found
     end
