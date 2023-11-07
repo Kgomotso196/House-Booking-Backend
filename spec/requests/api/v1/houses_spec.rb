@@ -54,6 +54,18 @@ RSpec.describe 'api/v1/houses', type: :request do
         end
         run_test!
       end
+      response '422', 'invalid request' do
+        let(:house) do
+          {
+            user_id: nil,  # You can provide valid or invalid values for the fields
+            house_name: nil,
+            description: nil,
+            location: nil,
+            house_image: nil
+          }
+        end
+        run_test!
+      end
     end
   end
 end
