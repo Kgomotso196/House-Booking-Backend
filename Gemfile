@@ -75,3 +75,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+
+gem 'active_model_serializers', '~> 0.10.2'
+
+gem 'jwt', '~> 1.5', '>= 1.5.4'
