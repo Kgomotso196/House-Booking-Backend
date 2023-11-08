@@ -101,6 +101,12 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [Derrick](https://twitter.com/DerrickHayle/)
 - LinkedIn: [Derrick](https://www.linkedin.com/in/okongo-derrick/)
 
+👤 : **John Murianki**
+
+- GitHub: [@githubhandle](https://github.com/tjay1760)
+- Twitter: [@twitterhandle](https://twitter.com/TjayPod)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/john-murianki-thiongo)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
