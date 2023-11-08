@@ -57,7 +57,7 @@ RSpec.describe 'api/v1/houses', type: :request do
       response '422', 'invalid request' do
         let(:house) do
           {
-            user_id: nil,  # You can provide valid or invalid values for the fields
+            user_id: nil, # You can provide valid or invalid values for the fields
             house_name: nil,
             description: nil,
             location: nil,
@@ -68,4 +68,39 @@ RSpec.describe 'api/v1/houses', type: :request do
       end
     end
   end
+
+  path '/api/v1/houses/{id}' do
+  parameter name: 'id', in: :path, type: :string, description: 'id' # Parameter definition
+
+  get('show house') do
+    response(404, 'unsuccessful') do
+      let(:id) { '123' }
+
+      after do |example|
+        example.metadata[:response][:content] = {
+          'application/json' => {
+            example: JSON.parse(response.body, symbolize_names: true)
+          }
+        }
+      end
+      run_test!
+    end
+  end
+    delete('delete house') do
+      response(200, 'successful') do
+      response('204', 'successful') do
+        let(:id) { '123' }
+
+        after do |example|
+          example.metadata[:response][:content] = {
+            'application/json' => {
+              example: JSON.parse(response.body, symbolize_names: true)
+            }
+          }
+        end
+        run_test!
+      end
+      end
+    end
+end
 end
