@@ -45,7 +45,7 @@ RSpec.describe 'api/v1/reservations', type: :request do
       }
 
       response '201', 'Reservation' do
-        let(:reservation) do  # Change 'house' to 'reservation'
+        let(:reservation) do # Change 'house' to 'reservation'
           {
             user_id: 1,
             house_id: 1,
@@ -58,7 +58,7 @@ RSpec.describe 'api/v1/reservations', type: :request do
         run_test!
       end
       response '422', 'invalid request' do
-        let(:reservation) do  # Change 'house' to 'reservation'
+        let(:reservation) do # Change 'house' to 'reservation'
           {
             user_id: nil,
             house_id: nil,
@@ -91,10 +91,10 @@ RSpec.describe 'api/v1/reservations', type: :request do
       end
     end
     delete('delete house') do
-        response(200, 'successful') do
+      response(200, 'successful') do
         response('204', 'successful') do
           let(:id) { '123' }
-  
+
           after do |example|
             example.metadata[:response][:content] = {
               'application/json' => {
@@ -104,9 +104,7 @@ RSpec.describe 'api/v1/reservations', type: :request do
           end
           run_test!
         end
+      end
     end
-    
-  
-  end
   end
 end

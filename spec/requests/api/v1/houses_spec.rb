@@ -70,25 +70,10 @@ RSpec.describe 'api/v1/houses', type: :request do
   end
 
   path '/api/v1/houses/{id}' do
-  parameter name: 'id', in: :path, type: :string, description: 'id' # Parameter definition
+    parameter name: 'id', in: :path, type: :string, description: 'id' # Parameter definition
 
-  get('show house') do
-    response(404, 'unsuccessful') do
-      let(:id) { '123' }
-
-      after do |example|
-        example.metadata[:response][:content] = {
-          'application/json' => {
-            example: JSON.parse(response.body, symbolize_names: true)
-          }
-        }
-      end
-      run_test!
-    end
-  end
-    delete('delete house') do
-      response(200, 'successful') do
-      response('204', 'successful') do
+    get('show house') do
+      response(404, 'unsuccessful') do
         let(:id) { '123' }
 
         after do |example|
@@ -100,7 +85,22 @@ RSpec.describe 'api/v1/houses', type: :request do
         end
         run_test!
       end
+    end
+    delete('delete house') do
+      response(200, 'successful') do
+        response('204', 'successful') do
+          let(:id) { '123' }
+
+          after do |example|
+            example.metadata[:response][:content] = {
+              'application/json' => {
+                example: JSON.parse(response.body, symbolize_names: true)
+              }
+            }
+          end
+          run_test!
+        end
       end
     end
-end
+  end
 end
