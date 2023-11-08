@@ -44,9 +44,4 @@ class Api::V1::HousesController < ApplicationController
       render json: { error: 'Failed to destroy the house' }, status: :unprocessable_entity
     end
   end
-
-
-  # def house_params
-  #   params.require(:house).permit(:house_name, :house_image, :description, :location, :user_id)
-  # end
 end
