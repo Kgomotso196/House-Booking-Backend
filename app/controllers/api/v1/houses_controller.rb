@@ -9,7 +9,14 @@ class Api::V1::HousesController < ApplicationController
   end
 
   def create
-    @house = House.new(house_params)
+    @house = House.new(
+      house_name: params['house_name'],
+      house_image: params['house_image'],
+      location: params['location'],
+      description: params['description'],
+      user_id: params['user_id'],
+    )
+    
     if @house.save
       render json: @house, status: :created
     else
@@ -40,7 +47,7 @@ class Api::V1::HousesController < ApplicationController
 
   private
 
-  def house_params
-    params.require(:house).permit(:house_name, :house_image, :house_price, :description, :location, :user_id)
-  end
+  # def house_params
+  #   params.require(:house).permit(:house_name, :house_image, :description, :location, :user_id)
+  # end
 end
