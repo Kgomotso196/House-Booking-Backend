@@ -14,9 +14,9 @@ class Api::V1::HousesController < ApplicationController
       house_image: params['house_image'],
       location: params['location'],
       description: params['description'],
-      user_id: params['user_id'],
+      user_id: params['user_id']
     )
-    
+
     if @house.save
       render json: @house, status: :created
     else
@@ -45,7 +45,6 @@ class Api::V1::HousesController < ApplicationController
     end
   end
 
-  private
 
   # def house_params
   #   params.require(:house).permit(:house_name, :house_image, :description, :location, :user_id)
