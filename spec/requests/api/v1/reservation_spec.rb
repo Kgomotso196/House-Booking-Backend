@@ -9,12 +9,8 @@ RSpec.describe 'api/v1/reservations', type: :request do
                items: {
                  type: :object,
                  properties: {
-                   user_id: { type: :integer },
-                   house_id: { type: :integer },
-                   checking_date: { type: :string },
-                   checkout_date: { type: :string },
-                   city: { type: :string },
-                   house_price: { type: :string }
+                   user_id: { type: :integer }, house_id: { type: :integer }, checking_date: { type: :string },
+                   checkout_date: { type: :string }, city: { type: :string }, house_price: { type: :string }
                  },
                  required: %w[user_id house_id house_price checking_date checkout_date city]
                }
@@ -34,12 +30,9 @@ RSpec.describe 'api/v1/reservations', type: :request do
       parameter name: :reservation, in: :body, schema: {
         type: :object,
         properties: {
-          user_id: { type: :integer },
-          house_id: { type: :integer },
-          city: { type: :string },
-          checking_date: { type: :string },
-          checkout_date: { type: :string },
-          house_price: { type: :string }
+          user_id: { type: :integer }, house_id: { type: :integer },
+          city: { type: :string }, checking_date: { type: :string },
+          checkout_date: { type: :string }, house_price: { type: :string }
         },
         required: %w[user_id house_id house_price checking_date checkout_date city]
       }
