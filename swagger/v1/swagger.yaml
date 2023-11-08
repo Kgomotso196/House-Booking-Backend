@@ -1,0 +1,194 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/houses":
+    get:
+      summary: list houses
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    user_id:
+                      type: integer
+                    location:
+                      type: string
+                    description:
+                      type: string
+                    house_image:
+                      type: string
+                    house_name:
+                      type: string
+                  required:
+                  - user_id
+                  - house_name
+                  - description
+                  - location
+                  - house_image
+    post:
+      summary: Creates a house
+      parameters: []
+      responses:
+        '201':
+          description: House
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                location:
+                  type: string
+                description:
+                  type: string
+                house_image:
+                  type: string
+                house_name:
+                  type: string
+              required:
+              - user_id
+              - house_name
+              - description
+              - location
+              - house_image
+  "/api/v1/houses/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show house
+      responses:
+        '404':
+          description: unsuccessful
+    delete:
+      summary: delete house
+      responses:
+        '204':
+          description: successful
+        '200':
+          description: successful
+  "/api/v1/reservations":
+    get:
+      summary: list reservations
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    user_id:
+                      type: integer
+                    house_id:
+                      type: integer
+                    checking_date:
+                      type: string
+                    checkout_date:
+                      type: string
+                    city:
+                      type: string
+                    house_price:
+                      type: string
+                  required:
+                  - user_id
+                  - house_id
+                  - house_price
+                  - checking_date
+                  - checkout_date
+                  - city
+    post:
+      summary: creates a reservation
+      parameters: []
+      responses:
+        '201':
+          description: Reservation
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                house_id:
+                  type: integer
+                city:
+                  type: string
+                checking_date:
+                  type: string
+                checkout_date:
+                  type: string
+                house_price:
+                  type: string
+              required:
+              - user_id
+              - house_id
+              - house_price
+              - checking_date
+              - checkout_date
+              - city
+  "/api/v1/reservations/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show reservation
+      responses:
+        '404':
+          description: unsuccessful
+    delete:
+      summary: delete house
+      responses:
+        '204':
+          description: successful
+        '200':
+          description: successful
+  "/api/v1/sessions":
+    post:
+      summary: A new user session
+      parameters: []
+      responses:
+        '201':
+          description: user created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_name:
+                  type: string
+              required:
+              - user_name
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: 127.0.0.1:3000
