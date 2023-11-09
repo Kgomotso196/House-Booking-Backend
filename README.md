@@ -76,7 +76,8 @@ Live demo for the website [Coming Soon]().
 
 Link to the [Kanban Board](https://github.com/users/Kgomotso196/projects/4/views/1)
 
-
+## API Documentation <a id="kanban-board"></a>
+Link to the [API Document](http://127.0.0.1:3000/api-docs/index.html)
 
 We are a team of four that are deeply enthusiastic about their roles. We applied efficient strategies to successfully finish the project and collaborated to resolve any issues or disagreements. Consistent communication and the equitable distribution of tasks among us were key elements of our commitment to delivering our best work. This sets us apart as dedicated professionals.
 
