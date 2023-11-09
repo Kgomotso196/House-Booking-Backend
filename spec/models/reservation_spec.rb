@@ -57,14 +57,14 @@ RSpec.describe Reservation, type: :model do
   # end
 
   # # validation
-  # it 'Should have a house_price as a string' do
-  #   @reservation1.house_price = 'house_price'
-  #   expect(@reservation1).to be_valid
-  # end
-  # it 'Should have a checkout_date as a string' do
-  #   @reservation1.checkout_date = 'checkout_date'
-  #   expect(@reservation1).to be_valid
-  # end
+  it 'Should have a house_price as a string' do
+    @reservation1.house_price = 'house_price'
+    expect(@reservation1).to be_valid
+  end
+  it 'Should have a checkout_date as a string' do
+    @reservation1.checkout_date = 'checkout_date'
+    expect(@reservation1).to be_valid
+  end
   it 'Should have a city as a string' do
     @reservation1.city = 'city'
     expect(@reservation1).to be_valid
