@@ -120,7 +120,7 @@ Install this project with these commands:
   bundle install
   rails db:create
   rails db:migrate
-  rails db:seed
+  rails db:migrate RAILS_ENV=test
   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -153,7 +153,6 @@ rails rake:secret
 ```
   rails db:create
   rails db:migrate
-  rails db:seed
   ```
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -181,6 +180,7 @@ user1 = User.create(
   name: 'Jane Smith',
   email: 'jane@example.com',
   password: 'password456',
+  password_confirmation: 'password546'
 )
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
