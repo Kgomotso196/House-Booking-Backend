@@ -12,10 +12,10 @@ RSpec.describe House, type: :model do
   it 'Should have valid attributes' do
     expect(@house1).to be_valid
   end
-  # it 'Should have a name' do
-  #   @house1.house_name = nil
-  #   expect(@house1).to_not be_valid
-  # end
+  it 'Should have a name' do
+    @house1.house_name = nil
+    expect(@house1).to_not be_valid
+  end
   # it 'Should have an image' do
   #   @house1.house_image = nil
   #   expect(@house1).to_not be_valid
