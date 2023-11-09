@@ -31,20 +31,20 @@ RSpec.describe Reservation, type: :model do
     expect(@reservation1).to_not be_valid
   end
 
-  # it 'Should have a checkout_date' do
-  #   @reservation1.checkout_date = nil
-  #   expect(@reservation1).to_not be_valid
-  # end
+  it 'Should have a checkout_date' do
+    @reservation1.checkout_date = nil
+    expect(@reservation1).to_not be_valid
+  end
 
-  # it 'Should have a city' do
-  #   @reservation1.city = nil
-  #   expect(@reservation1).to_not be_valid
-  # end
+  it 'Should have a city' do
+    @reservation1.city = nil
+    expect(@reservation1).to_not be_valid
+  end
 
-  # it 'Should have a house_price' do
-  #   @reservation1.house_price = nil
-  #   expect(@reservation1).to_not be_valid
-  # end
+  it 'Should have a house_price' do
+    @reservation1.house_price = nil
+    expect(@reservation1).to_not be_valid
+  end
 
   it 'Should have a user_id' do
     @reservation1.user_id = nil
