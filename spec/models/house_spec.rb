@@ -28,8 +28,8 @@ RSpec.describe House, type: :model do
     @house1.house_name = 'Milk juice'
     expect(@house1).to be_valid
   end
-  # it 'Should have a user' do
-  #   @house1.user_id = nil
-  #   expect(@house1).to_not be_valid
-  # end
+  it 'Should have a user' do
+    @house1.user_id = nil
+    expect(@house1).to_not be_valid
+  end
 end
