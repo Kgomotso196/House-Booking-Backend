@@ -7,8 +7,8 @@ RSpec.describe User, type: :model do
   it 'valid user with valid attributes' do
     expect(@user).to be_valid
   end
-  # it 'invalid user without a name' do
-  #   @user.name = nil
-  #   expect(@user).to_not be_valid
-  # end
+  it 'invalid user without a name' do
+    @user.name = nil
+    expect(@user).to_not be_valid
+  end
 end
