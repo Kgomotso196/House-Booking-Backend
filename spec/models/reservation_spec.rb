@@ -46,15 +46,15 @@ RSpec.describe Reservation, type: :model do
   #   expect(@reservation1).to_not be_valid
   # end
 
-  # it 'Should have a user_id' do
-  #   @reservation1.user_id = nil
-  #   expect(@reservation1).to_not be_valid
-  # end
+  it 'Should have a user_id' do
+    @reservation1.user_id = nil
+    expect(@reservation1).to_not be_valid
+  end
 
-  # it 'Should have a user_id' do
-  #   @reservation1.house_id = nil
-  #   expect(@reservation1).to_not be_valid
-  # end
+  it 'Should have a user_id' do
+    @reservation1.house_id = nil
+    expect(@reservation1).to_not be_valid
+  end
 
   # # validation
   it 'Should have a house_price as a string' do
