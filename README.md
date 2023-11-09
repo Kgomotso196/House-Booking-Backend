@@ -10,20 +10,20 @@
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-
-  - [🛠 Built With](#built-with)
-    - [Key Features](#key-features)
-  <!-- - [🚀 Live Demo](#live-demo) -->
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [:question: FAQ](#faq)
-- [📝 License](#license)
+- [� Table of Contents](#-table-of-contents)
+- [📖 RentHub ](#-renthub-)
+- [Kanbon board](#kanbon-board)
+  - [Kanbon board link](#kanbon-board-link)
+  - [The learning objective of this project are](#the-learning-objective-of-this-project-are)
+  - [Built With](#built-with)
+    - [Key Features ](#key-features-)
+  - [Getting Started](#getting-started)
+    - [Setup](#setup)
+    - [Running The App Locally](#running-the-app-locally)
+  - [Authors](#authors)
+  - [🤝 Contributing](#-contributing)
+  - [Show your support](#show-your-support)
+  - [Acknowledgments](#acknowledgments)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -122,3 +122,17 @@ Give a ⭐️ if you like this project!
 - Hats off to [Murat Korkmaz](https://www.behance.net/muratk) for designing the awesome template that was used. ✨
 - Microverse for giving us this chance
 - The amazing code reviewers for making us improve every day 👍
+
+
+
+
+
+
+
+
+
+
+
+
+
+
