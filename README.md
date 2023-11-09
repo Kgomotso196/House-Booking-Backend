@@ -191,7 +191,6 @@ To run the tests for models and requests, execute the following command:
 
 ```
 rspec ./spec/models
-rspec ./spec/requests
 
 ```
  
