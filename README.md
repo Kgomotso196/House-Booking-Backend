@@ -1,291 +1,273 @@
+<a id="readme-top"></a>
 <a name="readme-top"></a>
 
-<!--
-!!! IMPORTANT !!!
-This README is an example of how you could professionally present your codebase. 
-Writing documentation is a crucial part of your work as a professional software developer and cannot be ignored. 
-
-You should modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-OPTIONAL SECTIONS:
-- FAQ
-
-After you're finished please remove all the comments and instructions!
-
-For more information on the importance of a professional README for your repositories: https://github.com/microverseinc/curriculum-transversal-skills/blob/main/documentation/articles/readme_best_practices.md
--->
-
 <div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Microverse README Template</b></h3>
-
+  <h1>BookHouse</h1>
+  <h2>📖 Final Capstone back end App</h2>
 </div>
-
-<!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 House Booking (Backend) ](#-house-booking-backend-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [🎬 Kanban Board ](#-kanban-board-)
+  - [The learning objective of this project are](#the-learning-objective-of-this-project-are)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Database Setup.](#database-setup)
+    - [Usage](#usage)
+    - [Tests ](#tests-)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 House Booking (Backend) <a id="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
+**House Booking** is a website that offers hoouse booking and reservation services for travelers, providing a convenient way to find and book accommodations. You can select available houses for a graphic list on the home page of the website, or you can just click on the reserve menu item and see the full list of available rooms. You can find the repository for the [front end](https://github.com/Kgomotso196/House-Booking-Frontend) of this project here.
 
-**[your_project__name]** is a...
+Backend is implement as API-only. The front end is implemented utilizing the React framework.
 
-## 🛠 Built With <a name="built-with"></a>
+-  The backend Rails app is implemented as API-only. The application starts by fetching the `users` method on the backend, if the backend is available then the user will login by making a query to `users/new_session`.
 
-### Tech Stack <a name="tech-stack"></a>
+-  The house controller provides an `index` method to get all the data for house, and a `show` method to get details about a specific house. The `destroy` method deactivates the house when the user sends a delete query by clicking on delete.
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
+-  The reservation controller also provides `index` methods. Index is used to get a list of all reservations made. 
+ 
+## 🛠 Built With <a id="built-with"></a>
 
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-  </ul>
-</details>
+### Tech Stack <a id="tech-stack"></a>
 
 <details>
-  <summary>Server</summary>
+  <summary>Ruby on Rails</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li><a>https://rubyonrails.org/</a></li>   
   </ul>
 </details>
 
 <!-- Features -->
 
-### Key Features <a name="key-features"></a>
+### Key Features <a id="key-features"></a>
 
-> Describe between 1-3 key features of the application.
+- **Ability to see the featured house on the homepage**
+- **The ability to reserve houses based on selecting the date and room name**
+- **The ability to add houses to the database**
+- **The ability to delete houses**
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a id="live-demo"></a>
+
+Live demo for the website [Coming Soon]().
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
+## 🎬 Kanban Board <a id="kanban-board"></a>
 
-## 🚀 Live Demo <a name="live-demo"></a>
+Link to the [Kanban Board](https://github.com/users/Kgomotso196/projects/4/views/1)
 
-> Add a link to your deployed project.
+## API Documentation <a id="kanban-board"></a>
+Link to the [API Document](http://127.0.0.1:3000/api-docs/index.html)
 
-- [Live Demo Link](https://google.com)
+We are a team of four that are deeply enthusiastic about their roles. We applied efficient strategies to successfully finish the project and collaborated to resolve any issues or disagreements. Consistent communication and the equitable distribution of tasks among us were key elements of our commitment to delivering our best work. This sets us apart as dedicated professionals.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## The learning objective of this project are
+
+- Create ruby api back end app
+- Connect react front end app to rails back end
+- Use API end point to get data
+- Fetch data from the API
+
 
 <!-- GETTING STARTED -->
 
-## 💻 Getting Started <a name="getting-started"></a>
-
-> Describe how a new developer could make use of your project.
+## 💻 Getting Started <a id="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+In order to run this project, you need to:
 
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- Install Ruby
+- Install Rails
+- Install Posgresql
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
-
-```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+``` 
+  git clone https://github.com/Kgomotso196/House-Booking-Backend.git 
 ```
---->
 
 ### Install
 
-Install this project with:
+Install this project with these commands:
 
-<!--
-Example command:
-
-```sh
-  cd my-project
-  gem install
 ```
---->
+  cd House-Booking-backend
+  bundle install
+  rails db:create
+  rails db:migrate
+  rails db:migrate RAILS_ENV=test
+  ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Database Setup.
+
+Before creating database, you have to configure the master key for your project. This can be done in two ways.
+
+1. **Using our own master key that we have provided**
+cd into the project folder and in your terminal run
+
+``` 
+rails rake:secret
+
+```
+- This command will generate a master.key file and inside that file replace the key with the one shown below.
+
+**[f387ccf0b4eebd334dc8725a1cb9573]**
+
+- Proceed to creating db.
+
+2. **Generating your own master Key**
+
+- Remove config/master.key and config/credentials.yml.enc if they exist.
+- Run in the terminal: EDITOR=code rails credentials:edit 
+- Close the editor that opens.
+- This command will create a new master.key and credentials.yml.enc if they do not exist.
+
+- After this proceed to creating db with:
+```
+  rails db:create
+  rails db:migrate
+  ```
+  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Usage
+ 
+To run the project execute the following command:
 
-To run the project, execute the following command:
-
-<!--
-Example command:
-
-```sh
-  rails server
+``` 
+ rails s
 ```
---->
 
-### Run tests
-
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
+or
 
 ```
- -->
+./bin/dev
+```
 
+- You can use the following emails and passwords from seeded data to login from the frontend.
+
+for a Normal User
+
+```
+user1 = User.create(
+  name: 'Jane Smith',
+  email: 'jane@example.com',
+  password: 'password456',
+  password_confirmation: 'password546'
+)
+```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+###  Tests <a id="run-tests"></a>
+
+To run the tests for models and requests, execute the following command:
+
+```
+rspec ./spec/models
+
+```
+ 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
+## 👥 Authors <a id="authors"></a>  
+ 
+👤 : **Kgomotso (Troos) Nacane**
 
-## 👥 Authors <a name="authors"></a>
+- GitHub: [@githubhandle](https://github.com/Kgomotso196/)
+- Twitter: [@twitterhandle](https://twitter.com/t_r_o_o_s/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/kgomotso-nacane/)
+ 
 
-> Mention all of the collaborators of this project.
+👤 **Tonny Tei**
 
-👤 **Author1**
+- GitHub: [Tonny](https://github.com/teitonny/)
+- Linkedin: [Tonny](https://twitter.com/TonnyTei/)
+- Twitter: [Tonny](https://www.linkedin.com/in/tonny-tei-38a4771a0/)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Okongo Derrick**
 
-👤 **Author2**
+- GitHub: [Derrick](https://github.com/derrick1451/)
+- Twitter: [Derrick](https://twitter.com/DerrickHayle/)
+- LinkedIn: [Derrick](https://www.linkedin.com/in/okongo-derrick/)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 : **John Murianki**
 
+- GitHub: [@githubhandle](https://github.com/tjay1760)
+- Twitter: [@twitterhandle](https://twitter.com/TjayPod)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/john-murianki-thiongo)
+ 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FUTURE FEATURES -->
-
-## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
-
+## 🔭 Future Features <a id="future-features"></a> 
+ 
+- **[Payment Integration into the System]**
+- **[Add email confirmation]**
+ 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 
-## 🤝 Contributing <a name="contributing"></a>
+## 🤝 Contributing <a id="contributing"></a>
 
-Contributions, issues, and feature requests are welcome!
+Contributions, issues, as well as feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Kgomotso196/House-Booking-Backend/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- SUPPORT -->
+## ⭐️ Show your support <a id="support"></a>
 
-## ⭐️ Show your support <a name="support"></a>
-
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project, kindly leave a comment below and share it with
+someone who enjoys coding! or still, give us a ⭐️!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGEMENTS -->
-
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
+## 🙏 Acknowledgments <a id="acknowledgements"></a>
+ 
+-  Thanks to our amazing team members and coding partners for their invaluable contributions and dedication. 
+-  The Design reference for the website belongs to [Murat Korkmaz](https://www.behance.net/muratk). You can find the reference [here](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
+ 
+## 📝 License <a id="license"></a> 
 
-## 📝 License <a name="license"></a>
-
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+

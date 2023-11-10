@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: '<%= ENV['DATABASE_USERNAME'] %>'
+  password: '<%= ENV['DATABASE_PASSWORD'] %>'
+
+development:
+  <<: *default
+  database: House_Booking_development
+  username: '<%= ENV['DATABASE_USERNAME'] %>'
+  password: '<%= ENV['DATABASE_PASSWORD'] %>'
+test:
+  <<: *default
+  database: House_Booking_test
+  username: '<%= ENV['DATABASE_USERNAME'] %>'
+  password: '<%= ENV['DATABASE_PASSWORD'] %>'
+
+production:
+  <<: *default
+  username: '<%= ENV['DATABASE_USERNAME'] %>'
+  url: <%= ENV['DATABASE_URL'] %>
