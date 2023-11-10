@@ -1,0 +1,18 @@
+databases:
+  - name: house-booking
+    databaseName: house_booking
+    user: house_booking_user
+
+services:
+  - type: web
+    name: houseboooking0
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: house_booking
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
